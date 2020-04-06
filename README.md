@@ -12,7 +12,9 @@ s**K**an is a tailor made Kubernetes configuration files and resources that enab
 
 s**K**an supports Linux, Mac & Windows and the latest release is available here. ![release](https://img.shields.io/github/v/release/alcideio/skan?sort=semver)
 
-## s**K**an Kubernetes file
+<img src="img/skan-html-report-secret.png" alt="skan" width="90%"/>
+
+# s**K**an Kubernetes file
 
 ```sh
 $ skan manifest mydeployment.yaml
@@ -77,3 +79,21 @@ Flags:
       --outfile string   output file (default "skan-result.html")
       --output string    output as html or yaml (default "html")
 ```
+
+## Contributing
+
+### Bugs
+
+If you think you have found a bug please follow the instructions below.
+
+- Please spend a small amount of time giving due diligence to the issue tracker. Your issue might be a duplicate.
+- Open a [new issue](https://github.com/alcideio/rbac-tool/issues/new) if a duplicate doesn't already exist.
+
+### Features
+
+If you have an idea to enhance rbac-tool follow the steps below.
+
+- Open a [new issue](https://github.com/alcideio/rbac-tool/issues/new).
+- Remember users might be searching for your issue in the future, so please give it a meaningful title to helps others.
+- Clearly define the use case, using concrete examples.
+- Feel free to include any technical design for your feature.
