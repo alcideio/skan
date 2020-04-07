@@ -94,7 +94,6 @@ Flags:
   -h, --help             help for manifest
       --outfile string   output file (default "skan-result.html")
       --output string    output as html or yaml (default "html")
-
 ```
 
 ## Contributing
