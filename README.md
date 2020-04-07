@@ -4,7 +4,7 @@
 
 <img src="img/skan.png" alt="skan" width="120"/>
 
-###### s**K**an is powered by [Alcide Advisor](https://www.alcide.io/kubernetes-advisor) scan engine and OPA
+###### s**K**an is powered by the [Alcide Advisor](https://www.alcide.io/kubernetes-advisor) scan engine and [Open Policy Agent (OPA)](https://www.openpolicyagent.org)
 
 # s**K**an
 
@@ -76,7 +76,7 @@ Aliases:
 
 Examples:
 
-# Validate a YAML file. Multiple YAML files seperated with '---' is supported
+# Validate a YAML file. Multiple YAML files separated with '---' is supported
 skan manifest mydeployment.yaml
 
 # Validate the all resources found in 'myns' of a cluster using kubectl
