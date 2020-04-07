@@ -47,37 +47,54 @@ $ skan manifest mydeployment.yaml
 $ open skan-result.html
 ```
 
-## s**K**an Helm Chart
+## s**K**an **Helm Chart**
 
 ```sh
-$ helm3 template kaudit deploy/charts/kaudit --set k8sAuditEnvironment=eks >  kaudit_for_eks.yaml 
-$ skan manifest mydeployment.yaml
+$ helm template kaudit deploy/charts/kaudit --set k8sAuditEnvironment=eks | %v manifest -
+```
+## s**K**an **Kustomized Resources**
+
+```sh
+kubectl kustomize helloWorld | skan manifest -
 ```
 
 ### Command Line Example
 
 ```sh
-
-Validate Kubernetes resource manifest by analyzing the deployment file YAML.
+Validate Kubernetes resource(s) handed as YAML.
 
 YAML file with multiple resources are supported.
 By default a HTML report is generated. To generate YAML based outformat use --output flag
-
-#Examples
 
 skan manifest mydeployment.yaml
 
 Usage:
   skan manifest [flags]
 
+Aliases:
+  manifest, file, yaml, f
+
 Examples:
-skan manifest somepod.yaml
+
+# Validate a YAML file. Multiple YAML files seperated with '---' is supported
+skan manifest mydeployment.yaml
+
+# Validate the all resources found in 'myns' of a cluster using kubectl
+kubectl get all -n myns -o yaml | skan manifest -
+
+# Validate resource kustomization
+kubectl kustomize helloWorld | skan manifest -
+
+# Validate Helm Chart
+helm template kaudit deploy/charts/kaudit --set k8sAuditEnvironment=eks | %v manifest -
+
 
 Flags:
       --debug            debug trace level
   -h, --help             help for manifest
       --outfile string   output file (default "skan-result.html")
       --output string    output as html or yaml (default "html")
+
 ```
 
 ## Contributing
