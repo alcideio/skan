@@ -8,7 +8,7 @@
 
 # s**K**an
 
-s**K**an is a tailor made Kubernetes configuration files and resources that enable developers and devops to to check whether their work follows security & ops best practices.
+s**K**an is a tailor made Kubernetes configuration files and resources scanner that enable developers and devops team members to check whether their work is compliant with security & ops best practices.
 
 s**K**an supports Linux, Mac & Windows and the latest release is available here. ![release](https://img.shields.io/github/v/release/alcideio/skan?sort=semver)
 
