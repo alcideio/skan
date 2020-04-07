@@ -50,7 +50,7 @@ $ open skan-result.html
 ## s**K**an **Helm Chart**
 
 ```sh
-$ helm template kaudit deploy/charts/kaudit --set k8sAuditEnvironment=eks | %v manifest -
+$ helm template kaudit deploy/charts/kaudit --set k8sAuditEnvironment=eks | skan manifest -
 ```
 ## s**K**an **Kustomized Resources**
 
