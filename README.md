@@ -86,7 +86,7 @@ kubectl get all -n myns -o yaml | skan manifest -
 kubectl kustomize helloWorld | skan manifest -
 
 # Validate Helm Chart
-helm template kaudit deploy/charts/kaudit --set k8sAuditEnvironment=eks | %v manifest -
+helm template kaudit deploy/charts/kaudit --set k8sAuditEnvironment=eks | skan manifest -
 
 
 Flags:
