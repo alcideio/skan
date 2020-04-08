@@ -17,11 +17,12 @@ s**K**an supports Linux, Mac & Windows and the latest release is available here.
 # s**K**an Kubernetes file
 
 ```sh
-$ skan manifest mydeployment.yaml
+$ skan manifest --report-passed -f kaudit_for_eks.yaml
 ```
 
 ```sh
-[skan-this] Analyzing manifest file '10' resource(s) - '9' objects
+[skan-this] Analyzing resources from '1' files/directories.
+[skan-this] Loaded '9' objects
 [skan-this] Ops Conformance | Workload Readiness & Liveness
 [skan-this] Ops Conformance | Workload Capacity Planning
 [skan-this] Workload Software Supply Chain | Image Registry Whitelist
@@ -66,34 +67,36 @@ Validate Kubernetes resource(s) handed as YAML.
 YAML file with multiple resources are supported.
 By default a HTML report is generated. To generate YAML based outformat use --output flag
 
-skan manifest mydeployment.yaml
+skan manifest -f mydeployment.yaml
 
 Usage:
   skan manifest [flags]
 
 Aliases:
-  manifest, file, yaml, f
+  manifest, file, Files, m, manifests, validate
 
 Examples:
 
 # Validate a YAML file. Multiple YAML files seperated with '---' is supported
-skan manifest mydeployment.yaml
+skan manifest -f mydeployment.yaml -f myotherdeployment.yaml
 
-# Validate the all resources found in 'myns' of a cluster using kubectl
-kubectl get all -n myns -o yaml | skan manifest -
+# Validate all the resources found under the namespace 'myns' of a cluster with 'kubectl get'
+kubectl get all -n myns -o yaml | skan manifest --report-passed -f -
 
 # Validate resource kustomization
-kubectl kustomize helloWorld | skan manifest -
+kubectl kustomize helloWorld | skan manifest -f -
 
 # Validate Helm Chart
-helm template kaudit deploy/charts/kaudit --set k8sAuditEnvironment=eks | skan manifest -
+helm template kaudit deploy/charts/kaudit --set k8sAuditEnvironment=eks | skan manifest -f -
 
 
 Flags:
-      --debug            debug trace level
-  -h, --help             help for manifest
-      --outfile string   output file (default "skan-result.html")
-      --output string    output as html or yaml (default "html")
+  -d, --debug               Debug trace level
+  -f, --filename strings    One or more file names (or directories) that contain the configuration to sKan
+  -h, --help                help for manifest
+  -o, --output string       output format. Supported formats are html, yaml and json (default "html")
+      --outputfile string   OutputFormat file (default "skan-result.html")
+  -p, --report-passed       Report passed checks
 ```
 
 ## Contributing
