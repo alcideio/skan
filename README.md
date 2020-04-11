@@ -51,12 +51,12 @@ $ open skan-result.html
 ## s**K**an **Helm Chart**
 
 ```sh
-$ helm template kaudit deploy/charts/kaudit --set k8sAuditEnvironment=eks | skan manifest -
+$ helm template kaudit deploy/charts/kaudit --set k8sAuditEnvironment=eks | skan manifest -f -
 ```
 ## s**K**an **Kustomized Resources**
 
 ```sh
-kubectl kustomize helloWorld | skan manifest -
+kubectl kustomize helloWorld | skan manifest -f -
 ```
 
 ### Command Line Example
