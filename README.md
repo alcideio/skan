@@ -77,7 +77,7 @@ Aliases:
 
 Examples:
 
-# Validate a YAML file. Multiple YAML files seperated with '---' is supported
+# Validate a YAML file. Multiple YAML files separated with '---' is supported
 skan manifest -f mydeployment.yaml -f myotherdeployment.yaml
 
 # Validate all the resources found under the namespace 'myns' of a cluster with 'kubectl get'
