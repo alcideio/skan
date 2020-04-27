@@ -1,0 +1,7 @@
+FROM alpine:latest
+RUN  apk --no-cache --update add bash wget ca-certificates
+
+WORKDIR /
+COPY skan /skan
+
+ENTRYPOINT  ["/skan"]
