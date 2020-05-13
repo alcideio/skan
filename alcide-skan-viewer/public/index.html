@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="https://www.alcide.io/wp-content/themes/alcide/favicon.ico" />
+    <title>[Alcide] Skan This .. Manifest & Helm Scanner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#000000" />
+  
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/14367b7099.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+   
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script type='text/javascript'>
+
+      window['skanReportData'] = {
+  "AdvisorReportHeader": {
+    "CreationTimeStamp": "2020-05-10T10:01:29+03:00",
+    "ReportUID": "08f55481-9440-4814-994f-de22a6d5a58a",
+    "Info": "-",
+    "ScannerVersion": ".",
+    "MSTimeStamp": 1589094089936
+  },
+  "Reports": {
+    "Ops Conformance": {
+      "ResourceName": "Ops Conformance",
+      "ResourceNamespace": "KubeAdvisor",
+      "ResourceUID": "dops.1",
+      "ResourceKind": "Ops Conformance",
+      "Results": [
+        {
+          "CheckId": "dops.1.1.1.4429975745264558183",
+          "Category": "Ops Conformance",
+          "Severity": "Medium",
+          "Action": "Alert",
+          "Message": "'Pod default/alcide-advisor-cronjob-exportedprofile-1588283220-855hp', is missing at least one Liveness Probe - ",
+          "Recommendation": "Pod default/alcide-advisor-cronjob-exportedprofile-1588283220-855hp - Configure liveness probe for your pod containers to ensure Pod liveness is managed and monitored by Kubernetes",
+          "Url": "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
+          "Platform": "Kubernetes",
+          "References": [
+            "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"
+          ],
+          "ResultUID": "dops.1.1.1.4429975745264558183@4429975745264558183",
+          "Resource": {
+            "Kind": "Pod",
+            "Version": "v1",
+            "Name": "alcide-advisor-cronjob-exportedprofile-1588283220-855hp",
+            "Namespace": "default",
+            "Annotations": {
+              "alcide.io/advisor": "cronjob"
+            },
+            "Labels": {
+              "controller-uid": "252c5131-ab27-47fc-ab17-40b74f962701",
+              "job-name": "alcide-advisor-cronjob-exportedprofile-1588283220"
+            }
+          },
+          "Check": {
+            "ModuleTitle": "Ops Conformance",
+            "GroupTitle": "Workload Readiness \u0026 Liveness",
+            "CheckTitle": "Liveness Probe Configured",
+            "ModuleId": "dops.1",
+            "GroupId": "1",
+            "CheckId": "1"
+          }
+        },
+      ],
+    }
+  },
+};
+  
+  
+    </script>    
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+  </body>
+</html>

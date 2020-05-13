@@ -1,0 +1,40 @@
+.checkbox {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  .label {
+    /* display: flex; */
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    background: rgb(0, 148, 57);
+    border-radius: 50px;
+    position: relative;
+    transition: background-color .2s;
+  }
+  
+  .label .button {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+    transition: 0.2s;
+    background: #fff;
+    box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+  }
+  
+  .checkbox:checked + .label .button {
+    left: calc(100% - 1px);
+    transform: translateX(-100%);
+  }
+  
+  .label:active .button {
+    width: 30px;
+  }

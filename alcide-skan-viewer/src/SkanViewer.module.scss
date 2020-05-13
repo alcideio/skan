@@ -1,0 +1,57 @@
+/* import bootstrap to set changes */
+/* @import "bootstrap/scss/bootstrap"; */
+
+.header {
+  text-align: center;
+}
+
+span {
+  &.dangerText {
+    color: #dc3545;
+  }
+
+  &.infoText {
+    color: #17a2b8;
+    font-weight: bold;
+  }
+}
+
+.skanlogo {
+  font-family:'Source Code Pro'; 
+  font-weight: 600; 
+  font-style: normal; 
+  font-size: 24px;
+}
+
+.navLink {
+  color: #FFF;
+}
+
+.skanthisText {
+  font-family: 'Source Code Pro';
+  font-weight: 100;
+  font-size: 12px;
+  color: #343a40;
+}
+
+.skanthisCardHeader {
+  font-family: 'Source Code Pro';
+  font-weight: 100;
+  font-size: 20px;
+  color: #343a40;
+}
+
+.skanthisCheckInfo {
+  font-family: 'Source Code Pro';
+  font-weight: 600;
+  font-size: 18px;
+  color: #343a40;
+}
+
+.skanthisCallout {
+  padding: 1.25rem;
+  border: 1px solid #b8b8b8;
+  border-left-width: .4rem;
+  border-left-color: #488ed8;
+  border-radius: 0.5rem;
+}
