@@ -10,7 +10,7 @@
 
 s**K**an is a tailor made Kubernetes configuration files and resources scanner that enables developers and devops team members to check whether their work is compliant with security & ops best practices.
 
-<img src="img/skan-html-report-secret.png" alt="skan" width="90%"/>
+<img src="img/skan-html-report.png" alt="skan" width="90%"/>
 
 # Install s**K**an
 
@@ -21,7 +21,6 @@ Or use
 ```sh
 $ curl https://raw.githubusercontent.com/alcideio/skan/master/skan-download.sh | bash
 ```
-
 
 # s**K**an Kubernetes file
 
