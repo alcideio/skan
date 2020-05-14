@@ -10,7 +10,10 @@ const options = [
     { value: 'medium', label: 'Medium' },
     { value: 'low', label: 'Low' },
     { value: 'info', label: 'Info' },
+<<<<<<< HEAD
     { value: 'pass', label: 'Pass' },   
+=======
+>>>>>>> master
 ]
 
 const animatedComponents = makeAnimated();
