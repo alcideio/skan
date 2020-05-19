@@ -113,7 +113,7 @@ function Check({ check }) {
     }
 
     let nameSpacePill = ""
-    if (check.Resource.Namespace.length > 0) {
+    if (check.Resource.Namespace !== null && check.Resource.Namespace !== undefined && check.Resource.Namespace.length > 0) {
         nameSpacePill = (
             <CheckHeaderPill {...{ "name": "Namespace", "val": check.Resource.Namespace, "color": "light" }}></CheckHeaderPill>
         );
