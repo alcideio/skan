@@ -124,3 +124,5 @@ If you have an idea to enhance rbac-tool follow the steps below.
 - Remember users might be searching for your issue in the future, so please give it a meaningful title to helps others.
 - Clearly define the use case, using concrete examples.
 - Feel free to include any technical design for your feature.
+
+[![Stargazers over time](https://starchart.cc/alcideio/skan.svg)](https://starchart.cc/alcideio/skan)
