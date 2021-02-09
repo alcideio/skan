@@ -52,7 +52,7 @@ execute() {
   #(cd "${tmpdir}" && untar "${TARBALL}")
   test ! -d "${BINDIR}" && install -d "${BINDIR}"
   for binexe in $BINARIES; do
-    binexe=${binexe}_${TAG}_${OS}_${ARCH}
+    binexe=${binexe}_${TAG_VER}_${OS}_${ARCH}
     if [ "$OS" = "windows" ]; then
       binexe="${binexe}.exe"
     fi
@@ -365,7 +365,8 @@ log_info "found version: ${VERSION} for ${TAG}/${OS}/${ARCH}"
 
 #NAME=${PROJECT_NAME}_v<no value>.<no value>.<no value>_${OS}_${ARCH}
 #TARBALL=${NAME}.${FORMAT}
-NAME=${PROJECT_NAME}_${TAG}_${OS}_${ARCH}
+TAG_VER=${TAG%"-$PROJECT_NAME"}
+NAME=${PROJECT_NAME}_${TAG_VER}_${OS}_${ARCH}
 TARBALL=${NAME}
 
 TARBALL_URL=${GITHUB_DOWNLOAD}/${TAG}/${TARBALL}
