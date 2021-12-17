@@ -30,7 +30,7 @@
     "log-timestamp": "^0.3.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
-    "react-bootstrap": "^1.0.1",
+    "react-bootstrap": "^1.6.4",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "react-select": "^3.1.0",
