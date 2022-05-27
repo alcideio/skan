@@ -1,8 +1,10 @@
 import React from 'react';
 import { ComponentContext } from './State';
 import { actionTypes, groupByActionTypes } from './State';
+import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 
 import styles from './ToggleSwitch.module.scss';
+
 
 function ToggleSwitch() {
     const { state, dispatch } = React.useContext(ComponentContext);
@@ -15,29 +17,18 @@ function ToggleSwitch() {
     }
 
     return (
-        <div className="container">
-            <div className="row">
-                <div className="align-self-center justify-content-end">
-                    <span className="text-secondary">Resources</span>
-                </div>
-                <div className="col align-self-end">
-                    <input
-                        type='checkbox'
-                        className={styles.checkbox}
-                        id='groupByMainToggle'
-                        checked={on}
-                        onChange={() => dispatch({ type: actionTypes.groupByToggle })}
-                        readOnly
-                    />
-                    <label className={styles.label + ' mt-3'} htmlFor='groupByMainToggle' style={{ "background": "var(--blue)" }}>
-                        <span className={styles.button} />
-                    </label>
-                </div>
-                <div className="align-self-center">
-                    <span className="text-secondary">Modules</span>
-                </div>
-            </div>
-        </div>
+
+        <BootstrapSwitchButton
+        checked={on}
+        onlabel='Categories' 
+        offlabel='Resources'
+        onstyle="primary"   
+        offstyle="secondary"
+        width={150}
+        onChange={() => dispatch({ type: actionTypes.groupByToggle })}        
+        >
+
+        </BootstrapSwitchButton>
     );
 }
 
