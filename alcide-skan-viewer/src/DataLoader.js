@@ -39,7 +39,8 @@ export function prepareData(data, currentSeverityFilter, groupByCategory) {
             } else {
                 let gvk = ((oneResult.Resource.Group !== undefined && oneResult.Resource.Group !== "") ? oneResult.Resource.Group + '.' : "") +
                     oneResult.Resource.Kind;
-                groupName = `${oneResult.Resource.Namespace}/${oneResult.Resource.Name} (${gvk})`
+
+                groupName = (oneResult.Resource.Namespace !== undefined || oneResult.Resource.Namespace === "") ? `${oneResult.Resource.Namespace}/${oneResult.Resource.Name} (${gvk})`: `${oneResult.Resource.Name} (${gvk})`;
             }
 
             if (!checks.has(groupName)) {
