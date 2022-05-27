@@ -8,23 +8,6 @@ import * as utils from './utils';
 
 import styles from './SkanViewer.module.scss';
 
-function CheckGroupToggle({ children, eventKey }) {
-
-    return (
-         <Accordion.Toggle 
-            as={Button} 
-            variant="link" 
-            className={styles.skanthisCardHeader}
-            eventKey={eventKey}>
-                <FontAwesomeIcon
-                    icon={['fas', 'chevron-down']}
-                    size="sm"
-                />
-                {children}
-         </Accordion.Toggle>
-    );
-}
-
 function Checks({checkGroups}) {
     
     //console.log("checkGroups", checkGroups);
@@ -40,28 +23,32 @@ function Checks({checkGroups}) {
 
     const cards = Array.from(groups.keys()).map((groupName, index) => {
         return (
-            <Card key={index}>
-                <Card.Header>
-                    <CheckGroupToggle eventKey={index.toString()}>
-                        <span className="ml-2">{groups[index]}</span>
-                    </CheckGroupToggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey={index.toString()}>
-                    <Card.Body>
-                        <Table borderless className={styles.skanthisText}>
-                            <tbody>
-                                {checks[index].map((check, index) =>
-                                    <tr key={index}>
-                                        <td>
-                                            <Check key={check.CheckId} {...{ check: check }} style={{ width: "80%" }}></Check>
-                                        </td>
-                                    </tr>
-                                )}
-                            </tbody>
-                        </Table>
-                    </Card.Body>
-                </Accordion.Collapse>
-            </Card>
+            <Accordion.Item eventKey={index.toString()}>
+
+                <Accordion.Header>
+                <span className={styles.skanthisCardHeader}>{groups[index]}</span>
+                </Accordion.Header>
+
+
+                    <Accordion.Collapse eventKey={index.toString()}>
+                    <Card key={index}>
+                        <Card.Body>
+                            <Table borderless className={styles.skanthisText}>
+                                <tbody>
+                                    {checks[index].map((check, index) =>
+                                        <tr key={index}>
+                                            <td>
+                                                <Check key={check.CheckId} {...{ check: check }} style={{ width: "80%" }}></Check>
+                                            </td>
+                                        </tr>
+                                    )}
+                                </tbody>
+                            </Table>
+                        </Card.Body>
+                    </Card>
+                    </Accordion.Collapse>
+
+            </Accordion.Item>
         );
     })
 
@@ -76,7 +63,7 @@ function Checks({checkGroups}) {
 
 function CheckHeaderPill(props) {
     return (
-        <Button variant={props.color} size="sm" className={'ml-2 border badge-pill badge' + props.color} data-toggle="tooltip">
+        <Button variant={props.color} size="sm" className={'m-1 border badge-pill badge' + props.color} data-toggle="tooltip">
             <span>{props.name}: </span><span className="font-weight-bold"> {props.val} </span>
         </Button>
     );
@@ -156,7 +143,7 @@ function Check({ check }) {
                 <CheckBodyTextItem>
                     <p className="text-dark font-weight-bold text-uppercase">
                         Description
-                        <span className="text-secondary text-lowercase font-italic ml-3" style={{ "fontSize": "10px" }}>{check.CheckId}</span>
+                        <span className="text-secondary text-lowercase font-italic m-2" style={{ "fontSize": "10px" }}>{check.CheckId}</span>
                     </p>
                 </CheckBodyTextItem>
                 <CheckBodyTextItem>
